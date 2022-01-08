@@ -345,9 +345,24 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
-	h1.major, h2.major, h3.major {
+	h1.major, h2.major, h3.major{
 		position: relative;
+		color: transparent !important;
+	    -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+		background: linear-gradient(to right, transparent, rgb(255,255,255,.7), transparent);
+        transition: all 0.7s ease-out;
+        background-size: 200% 100%;
+        background-position: -100%;
+
 	}
+	    h1.major:before, h2.major:before, h3.major:before {
+            text-shadow: none;
+		}
+		h1.major:hover, h2.major:hover, h3.major:hover {
+              background-position: 0%;
+                text-shadow: 1px 1px white;
+	    }
 
 		h1.major:after, h2.major:after, h3.major:after {
 			content: '';
@@ -1594,6 +1609,15 @@ input, select, textarea {
 				left: 0.1rem;
 				font-size: 1.75rem;
 			}
+
+			button.icon.circle.fa-angle-right:hover,
+			.button.icon.circle.fa-angle-right:hover,
+			 button.icon.circle.fa-angle-left:hover,
+			.button.icon.circle.fa-angle-left:hover{
+			    transition: transform .7s ease-in-out !important;
+                transform: rotate(360deg);
+			}
+
 
 		input[type="submit"].fit,
 		input[type="reset"].fit,
@@ -3693,10 +3717,11 @@ input, select, textarea {
   color: transparent !important;
   top: 0;
   margin: 0 auto;
-  text-align: right !important;
+  text-align: left !important;
   display: flex;
-  align-items: right;
-  justify-content: right;
+  align-items: center right;
+  justify-content: center;
+  text-shadow: 1px 1px white
   height: 100%;
 }
 .pri a {
@@ -3704,7 +3729,7 @@ input, select, textarea {
   display: run-in;
   padding: 0 5px;
   font-family: "Source Sans Pro";
-  font-size: 75px;
+  font-size: 85px;
   line-height: .25;
   font-weight: auto;
   position: relative;
@@ -3715,10 +3740,11 @@ input, select, textarea {
   background-image: linear-gradient(to right, black, grey 50%, white 50%);
   background-size: 200% 100%;
   background-position: -100%;
-  transition: all 0.3s ease-in-out;
+  transition: all 1s ease-in-out;
+  text-shadow: 2px 1px white;
+  transition-delay: 1s;
 }
 .pri a:before {
-  text-shadow: none;
   display: block;
   content: "";
   width: 0;
@@ -3728,13 +3754,15 @@ input, select, textarea {
   bottom: -3px;
   z-index: 0;
   position: absolute;
-  background: linear-gradient(to right, black, grey 50%);;
-  transition: all 0.3s ease-in-out;
+  text-shadow: 2px 1px white
+  background: linear-gradient(to right, black, grey 50%) !important;
+  transition: all 1s ease-in-out;
 }
 .pri a:hover {
   background-position: 0%;
-  text-shadow: 1px 1px white;
-}
+  transition: all 1.5s ease-in-out;
+  text-shadow: 2px 1px white;
 .pri a:hover:before {
   width: 101%;
+  text-shadow: 2px 1px white;
 }
