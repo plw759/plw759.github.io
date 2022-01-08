@@ -176,14 +176,14 @@ input, select, textarea {
 	}
 
 		body:before {
-			-moz-animation: load-spinner 1s infinite linear;
-			-webkit-animation: load-spinner 1s infinite linear;
-			-ms-animation: load-spinner 1s infinite linear;
-			animation: load-spinner 1s infinite linear;
-			-moz-transition: opacity 0.25s ease;
-			-webkit-transition: opacity 0.25s ease;
-			-ms-transition: opacity 0.25s ease;
-			transition: opacity 0.25s ease;
+			-moz-animation: load-spinner 2s infinite linear;
+			-webkit-animation: load-spinner 2s infinite linear;
+			-ms-animation: load-spinner 2s infinite linear;
+			animation: load-spinner 2s infinite linear;
+			-moz-transition: opacity 0.5s ease;
+			-webkit-transition: opacity 0.5s ease;
+			-ms-transition: opacity 0.5s ease;
+			transition: opacity 0.5s ease;
 			-moz-transition-delay: 0s;
 			-webkit-transition-delay: 0s;
 			-ms-transition-delay: 0s;
@@ -233,10 +233,10 @@ input, select, textarea {
 		}
 
 		body.is-preload:before {
-			-moz-transition: opacity 1s ease;
-			-webkit-transition: opacity 1s ease;
-			-ms-transition: opacity 1s ease;
-			transition: opacity 1s ease;
+			-moz-transition: opacity 2s ease;
+			-webkit-transition: opacity 2s ease;
+			-ms-transition: opacity 2s ease;
+			transition: opacity 2s ease;
 			-moz-transition-delay: 0.75s;
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
@@ -617,7 +617,7 @@ input, select, textarea {
 	label {
 		color: rgba(255, 255, 255, 0.875);
 		display: block;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: "Source Sans Pro";
 		font-size: 0.8rem;
 		font-weight: 700;
 		margin: 0 0 0.4875rem 0;
@@ -878,7 +878,7 @@ input, select, textarea {
 	}
 
 		.image.filtered:after {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, .9) 8%, rgba(114, 97, 147, 0.7) 20%, rgba(227, 123, 124, 0.6) 50%, rgba(255, 208, 180, 0.5));
 			background-size: 128px 128px, auto;
 			pointer-events: none;
 			content: '';
@@ -892,7 +892,7 @@ input, select, textarea {
 		}
 
 		.image.filtered.tinted:after {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)), linear-gradient(0deg, rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125));
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, .9) 8%, rgba(114, 97, 147, 0.7) 20%, rgba(227, 123, 124, 0.6) 50%, rgba(255, 208, 180, 0.5)), linear-gradient(0deg, rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125));
 			background-size: 128px 128px, auto, auto;
 		}
 
@@ -3687,3 +3687,54 @@ input, select, textarea {
 			}
 
 	}
+
+	.pri {
+  position: relative;
+  color: transparent !important;
+  top: 0;
+  margin: 0 auto;
+  text-align: right !important;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  height: 100%;
+}
+.pri a {
+  text-decoration: none;
+  display: run-in;
+  padding: 0 5px;
+  font-family: "Source Sans Pro";
+  font-size: 75px;
+  line-height: .25;
+  font-weight: auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, black, grey 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  transition: all 0.3s ease-in-out;
+}
+.pri a:before {
+  text-shadow: none;
+  display: block;
+  content: "";
+  width: 0;
+  height: 3px;
+  bottom: 5px;
+  left: 0;
+  bottom: -3px;
+  z-index: 0;
+  position: absolute;
+  background: linear-gradient(to right, black, grey 50%);;
+  transition: all 0.3s ease-in-out;
+}
+.pri a:hover {
+  background-position: 0%;
+  text-shadow: 1px 1px white;
+}
+.pri a:hover:before {
+  width: 101%;
+}
